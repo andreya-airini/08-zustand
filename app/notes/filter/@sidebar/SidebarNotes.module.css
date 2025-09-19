@@ -1,0 +1,30 @@
+.menuList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+
+.menuContainer {
+  width: 200px;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #333;
+  height: 813px;
+  flex-grow: 1;
+}
+
+.menuLink {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  display: block;
+  padding: 22px 16px;
+  background-color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.menuLink:hover {
+  background-color: #444;
+  color: #ddd;
+}
