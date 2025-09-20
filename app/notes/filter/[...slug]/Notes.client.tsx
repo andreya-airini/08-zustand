@@ -10,8 +10,6 @@ import Loading from "@/components/Loading/Loading";
 import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 import Pagination from "@/components/Pagination/Pagination";
 import SearchBox from "@/components/SearchBox/SearchBox";
-// import Modal from "@/components/Modal/Modal";
-// import NoteForm from "@/components/NoteForm/NoteForm";
 import css from "./Notes.module.css";
 import Link from "next/link";
 
@@ -22,7 +20,6 @@ type Props = {
 export default function NotesClient({ tag }: Props) {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
-  // const [isOpen, setIsOpen] = useState(false);
   const debouncedSearch = useDebounce(search, 1000);
 
   const { data, isLoading, isError } = useQuery({

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NoteHub – Manage Your Notes Easily",
     description: "Keep your thoughts organized and accessible in one place.",
-    url: "https://yourdomain.com", // заміни на свій домен
+    url: "https://08-zustand-indol-phi.vercel.app/",
     siteName: "NoteHub",
     images: [
       {

@@ -17,7 +17,7 @@ export async function generateMetadata({
   const { id } = await params;
   const note = await fetchNoteById(id);
 
-  const url = `https://yourdomain.com/notes/${id}`;
+  const url = `https://08-zustand-indol-phi.vercel.app/notes/${id}`;
   const ogImage = "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg";
 
   return {

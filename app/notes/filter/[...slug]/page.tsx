@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: Props) {
   }
 
   const url = tag
-    ? `https://yourdomain.com/notes/filter/${tag}`
-    : `https://yourdomain.com/notes/filter/all`; // alege care
+    ? `https://08-zustand-indol-phi.vercel.app/notes/filter/${tag}`
+    : `https://08-zustand-indol-phi.vercel.app/notes/filter/all`;
   const ogImage = "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg";
 
   return {
