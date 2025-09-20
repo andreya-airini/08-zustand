@@ -1,4 +1,39 @@
 import styles from "./Home.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "NoteHub – Manage Your Notes Easily",
+  description:
+    "NoteHub is a simple and efficient app for managing personal notes. Write, edit, and browse notes with ease – anytime, anywhere.",
+  openGraph: {
+    title: "NoteHub – Manage Your Notes Easily",
+    description: "Keep your thoughts organized and accessible in one place.",
+    url: "https://yourdomain.com", // заміни на свій домен
+    siteName: "NoteHub",
+    images: [
+      {
+        url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Notehub",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NoteHub – Your Personal Notes App",
+    description: "Simple and efficient note-taking app built with Next.js.",
+    images: [
+      {
+        url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Notehub",
+      },
+    ],
+  },
+};
 
 export default function Home() {
   return (

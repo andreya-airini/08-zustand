@@ -10,9 +10,10 @@ import Loading from "@/components/Loading/Loading";
 import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 import Pagination from "@/components/Pagination/Pagination";
 import SearchBox from "@/components/SearchBox/SearchBox";
-import Modal from "@/components/Modal/Modal";
-import NoteForm from "@/components/NoteForm/NoteForm";
+// import Modal from "@/components/Modal/Modal";
+// import NoteForm from "@/components/NoteForm/NoteForm";
 import css from "./Notes.module.css";
+import Link from "next/link";
 
 type Props = {
   tag?: string;
@@ -21,7 +22,7 @@ type Props = {
 export default function NotesClient({ tag }: Props) {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const debouncedSearch = useDebounce(search, 1000);
 
   const { data, isLoading, isError } = useQuery({
@@ -43,9 +44,9 @@ export default function NotesClient({ tag }: Props) {
       <div className={css.toolbar}>
         <div>
           <SearchBox onSearch={handleSearch} />
-          <button className={css.button} onClick={() => setIsOpen(true)}>
+          <Link href="/notes/action/create" className={css.button}>
             Create note+
-          </button>
+          </Link>
         </div>
         {data && data.totalPages > 1 && (
           <Pagination
@@ -57,12 +58,6 @@ export default function NotesClient({ tag }: Props) {
       </div>
 
       {data && data.notes.length > 0 && <NoteList notes={data.notes} />}
-
-      {isOpen && (
-        <Modal onClose={() => setIsOpen(false)}>
-          <NoteForm onCancel={() => setIsOpen(false)} />
-        </Modal>
-      )}
     </div>
   );
 }
