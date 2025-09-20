@@ -5,12 +5,13 @@ import {
 } from "@tanstack/react-query";
 import { fetchNotes } from "@/lib/api";
 import NotesClient from "./Notes.client";
+import type { Metadata } from "next";
 
 type Props = {
   params: Promise<{ slug?: string[] }>;
 };
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const tagParam = slug?.[0];
   const tag = tagParam === "all" ? undefined : tagParam;
